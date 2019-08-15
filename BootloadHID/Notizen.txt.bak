@@ -1,0 +1,81 @@
+130219
+
+Makefile angepasst:
+DEVICE = atmega16a
+BOOTLOADER_ADDRESS = 3800
+F_CPU = 12000000
+Fuses werden aus Makefile nicht gezogen!
+
+Bootloader Adresse wird hier in Byte angegeben, 
+ansonsten rechnet AVR Doku in Word (2x 0x1C00 = 0x3800)
+kein 0x voranstellen!
+
+Funktioniert haben folgene Fuses (manuell programiert):
+high 0xD0
+low 0xFF
+
+bei versehentlich falsch gestezten Clock Fuses kommmt Fehler 0xc0 beim Read
+dann einfach RC Glied an XTAL1 (22p, 1k5, s.a. Datasheet), dann ist das Device wieder les- und programmierbar
+keine Messsungen an XTAL2, dann bricht Takt zusammen (auch bei x10 Setting am Tastkopf)
+XTAL1 geht so einigermaßen zu messen, bei breadboard Aufbau recht wackelig
+
+MCU läuft auch mit VCC und GND nur an Pins 5/6 an
+Chip mus fest auf Evalboard gedrückzt werden (mit Federklemme, Tesa allein reicht nicht!), löten ist sicherer
+
+bootloaderconfig.h
+Trigger Pin ist D3, auf 0 gezogen halten für Flashen
+USB Pins auf D4 / D2 geändert
+
+main.c
+optional im Makefile auskommentieren bzw. ändern: 
+TEST_MODE für Test im normalen Speicher an 0x0000
+DEBUG_LEVEL = 2 für Log auf UART (Realterm, 19200)
+ 
+-> enumeriert ok
+
+
+
+******************************************************** 
+* Endanwendungen müssen nicht weiter angepasst werden, 
+* laufen im gleichen Build wie ohne Bootloader !!!
+********************************************************
+ 
+OIL:
+wie wird Startadresse in der GUI eingetragen ? .text=
+warum werden Fuses in Makefile nicht ausgewertet? -> Makefile ist für AVRDude
+
+
+
+
+
+----
+
+
+vorübergehende fehlgeschlagene Versuche bis klar wurde, dass Bootloader Condition gehalten werden muss:
+Release Version gebaut
+0x3800 statt 3800
+andere Adressen (01cc, 1800...)
+DEBUG_LEVEL=1, =2
+BootloadHID.exe (findet kein Device)
+alle PWR angeschlossen, incl. AVCC
+programmiert mit allen VCC Leitungen
+anderer Port am USB Hub
+direkt, ohne USB Hub
+Fuses: ohne BOOTRST, ohne EESVE, drei SUT 16K CK Varianten (1K startet nicht), mit BODEN, mit CKOPT, mit/ohne JTAGEN, ODEN ...
+alle PIDs in USBDevView gelöscht und neu lernen lassen
+XTAL 22p statt 15p
+XTAL Leitungen getauscht
+mit Anpressdruck
+div. Lockbits für Application und Boot sections durchprobiert
+anderes Pack (1.1.209 statt 1.3.330)
+ohne Optimization kompiliert -> 15k groß, passt eh nicht, außerdem Compilerwarnung dass delay Funktion nicht geht
+noch ein Build mit SerialNumer in usbconfig.h defined, kein Unterschied
+nächster Versuch: Build auf W7, Prog auf W10:
+Projekte auf W7 kopiert, Pack 1.3.300 upgedated
+Programmer installiert -> ganze Toolchain auf W7, kein Unterschied
+
+Analyse mit Wireshark:
+Report Descriptor wird einwandfrei übertragen, beim Klick auf Find Device antwortet das Device aber nicht
+
+==> BOOTLOADER CONDITION MUSS FÜR FLASH VORGANG ERHALTEN BLEIBEN!!! D3 AUF 0 LASSEN BIS RESET!
+

@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "BootloadHID", "BootloadHID\BootloadHID.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "HID gfe", "HID gfe\HID gfe.cproj", "{E831CA58-7F7B-4D63-8554-B713A657612D}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "g1000_left", "g1000_left\g1000_left.cproj", "{78771760-599B-4ACF-8BBE-4607C3F8E307}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "g1000_ctr", "g1000_ctr\g1000_ctr.cproj", "{96E9B9E0-6067-4875-8622-61BCF0103C60}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "g1000_right", "g1000_right\g1000_right.cproj", "{A1E01DCF-E26E-4DB0-9894-2F5ABD6A6360}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "g1000_ctr BootloadHID", "g1000_ctr BootloadHID\g1000_ctr BootloadHID.cproj", "{5ED10AA4-3E63-4739-952F-6F8E215CBC79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+		{E831CA58-7F7B-4D63-8554-B713A657612D}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E831CA58-7F7B-4D63-8554-B713A657612D}.Debug|AVR.Build.0 = Debug|AVR
+		{E831CA58-7F7B-4D63-8554-B713A657612D}.Release|AVR.ActiveCfg = Release|AVR
+		{E831CA58-7F7B-4D63-8554-B713A657612D}.Release|AVR.Build.0 = Release|AVR
+		{78771760-599B-4ACF-8BBE-4607C3F8E307}.Debug|AVR.ActiveCfg = Debug|AVR
+		{78771760-599B-4ACF-8BBE-4607C3F8E307}.Debug|AVR.Build.0 = Debug|AVR
+		{78771760-599B-4ACF-8BBE-4607C3F8E307}.Release|AVR.ActiveCfg = Release|AVR
+		{78771760-599B-4ACF-8BBE-4607C3F8E307}.Release|AVR.Build.0 = Release|AVR
+		{96E9B9E0-6067-4875-8622-61BCF0103C60}.Debug|AVR.ActiveCfg = Debug|AVR
+		{96E9B9E0-6067-4875-8622-61BCF0103C60}.Debug|AVR.Build.0 = Debug|AVR
+		{96E9B9E0-6067-4875-8622-61BCF0103C60}.Release|AVR.ActiveCfg = Release|AVR
+		{96E9B9E0-6067-4875-8622-61BCF0103C60}.Release|AVR.Build.0 = Release|AVR
+		{A1E01DCF-E26E-4DB0-9894-2F5ABD6A6360}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A1E01DCF-E26E-4DB0-9894-2F5ABD6A6360}.Debug|AVR.Build.0 = Debug|AVR
+		{A1E01DCF-E26E-4DB0-9894-2F5ABD6A6360}.Release|AVR.ActiveCfg = Release|AVR
+		{A1E01DCF-E26E-4DB0-9894-2F5ABD6A6360}.Release|AVR.Build.0 = Release|AVR
+		{5ED10AA4-3E63-4739-952F-6F8E215CBC79}.Debug|AVR.ActiveCfg = Debug|AVR
+		{5ED10AA4-3E63-4739-952F-6F8E215CBC79}.Debug|AVR.Build.0 = Debug|AVR
+		{5ED10AA4-3E63-4739-952F-6F8E215CBC79}.Release|AVR.ActiveCfg = Release|AVR
+		{5ED10AA4-3E63-4739-952F-6F8E215CBC79}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
