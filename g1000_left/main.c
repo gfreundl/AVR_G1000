@@ -217,7 +217,7 @@ int __attribute__((noreturn)) main(void)
 							| ((1<<PINC5) & ~(PINC & (1<<PINC5))) >>1	//S10
 							| ((1<<PINC6) & ~(PINC & (1<<PINC6))) >>1	//S9
 							| ((1<<PINC7) & ~(PINC & (1<<PINC7))) >>1	//S8
-							| ((1<<PINA7) & ~(PINC & (1<<PINA7)));		//S7
+							| ((1<<PINA7) & ~(PINA & (1<<PINA7)));		//S7
 
 		reportBuffer.a2 =	((1<<PINB0) & ~(PINB & (1<<PINB0))) 		//S1
 							| ((1<<PINA0) & ~(PINA & (1<<PINA0))) <<1	//S2
@@ -239,8 +239,7 @@ int __attribute__((noreturn)) main(void)
 								| (enc[3] & 0b11000000);								;
 			reportBuffer.a4 = (enc[3] & 0b00110000) >>4					//S17 fast option
 								| (enc[4] & 0b11000000) >>4
-								| (enc[5] & 0b11000000) >>2
-								| 0b11000000;
+								| (enc[5] & 0b11000000) >>2;
 			c = 0;
 			TIFR |= (1<<OCF1A);					//clear timer compare flag
 			TCNT1 = 0x0000;						//restart timer

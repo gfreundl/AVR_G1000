@@ -43,7 +43,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 oddebug.o
  .debug_line    0x00000000       0x1a oddebug.o
- .debug_str     0x00000000      0x15a oddebug.o
+ .debug_str     0x00000000      0x156 oddebug.o
  .comment       0x00000000       0x31 oddebug.o
  .text          0x00000000        0x0 usbdrv.o
  .data          0x00000000        0x0 usbdrv.o
@@ -225,7 +225,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xb8c
+.text           0x00000000      0xb8a
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.3.300/gcc/dev/atmega16a/avr5/crtatmega16a.o
                 0x00000000                __vector_default
@@ -341,20 +341,20 @@ END GROUP
  .text.init_TC1
                 0x000004ea       0x16 main.o
                 0x000004ea                init_TC1
- .text.main     0x00000500      0x3e0 main.o
+ .text.main     0x00000500      0x3de main.o
                 0x00000500                main
  .text.usbSetInterrupt
-                0x000008e0       0x46 usbdrv.o
-                0x000008e0                usbSetInterrupt
- .text.usbPoll  0x00000926      0x248 usbdrv.o
-                0x00000926                usbPoll
- .text.usbInit  0x00000b6e       0x1a usbdrv.o
-                0x00000b6e                usbInit
-                0x00000b88                . = ALIGN (0x2)
+                0x000008de       0x46 usbdrv.o
+                0x000008de                usbSetInterrupt
+ .text.usbPoll  0x00000924      0x248 usbdrv.o
+                0x00000924                usbPoll
+ .text.usbInit  0x00000b6c       0x1a usbdrv.o
+                0x00000b6c                usbInit
+                0x00000b86                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000b88        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000b88                _exit
-                0x00000b88                exit
+ .fini9         0x00000b86        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000b86                _exit
+                0x00000b86                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -373,11 +373,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000b88        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000b86        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000b8c                _etext = .
+                0x00000b8a                _etext = .
 
-.data           0x00800060        0x4 load address 0x00000b8c
+.data           0x00800060        0x4 load address 0x00000b8a
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -426,8 +426,8 @@ END GROUP
                 0x008000ba                usbConfiguration
                 0x008000bb                usbRxBuf
                 0x008000d1                PROVIDE (__bss_end, .)
-                0x00000b8c                __data_load_start = LOADADDR (.data)
-                0x00000b90                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000b8a                __data_load_start = LOADADDR (.data)
+                0x00000b8e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008000d1        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -511,12 +511,12 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x13fc
+.debug_info     0x00000000     0x13f8
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x52e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.3.300/gcc/dev/atmega16a/avr5/crtatmega16a.o
  .debug_info    0x0000052e      0x55a main.o
  .debug_info    0x00000a88      0x904 usbdrv.o
- .debug_info    0x0000138c       0x70 usbdrvasm.o
+ .debug_info    0x0000138c       0x6c usbdrvasm.o
 
 .debug_abbrev   0x00000000      0xa86
  *(.debug_abbrev)
@@ -537,13 +537,13 @@ END GROUP
  .debug_frame   0x00000000       0x74 main.o
  .debug_frame   0x00000074       0x58 usbdrv.o
 
-.debug_str      0x00000000      0x748
+.debug_str      0x00000000      0x70f
  *(.debug_str)
  .debug_str     0x00000000      0x1af C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.3.300/gcc/dev/atmega16a/avr5/crtatmega16a.o
  .debug_str     0x000001af      0x2f6 main.o
                                 0x338 (size before relaxing)
- .debug_str     0x000004a5      0x2a3 usbdrv.o
-                                0x4d9 (size before relaxing)
+ .debug_str     0x000004a5      0x26a usbdrv.o
+                                0x4d5 (size before relaxing)
 
 .debug_loc      0x00000000      0xaab
  *(.debug_loc)
